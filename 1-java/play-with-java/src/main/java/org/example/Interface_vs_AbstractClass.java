@@ -55,7 +55,7 @@ abstract class AbstractList implements List {
 //-----------------------------------------------------------
 
 //using 'array' data-structure
-class ArrayList extends AbstractList implements List {
+class ArrayList1 extends AbstractList implements List {
 
     @Override
     public void add(Object o) {
@@ -89,7 +89,7 @@ class ArrayList extends AbstractList implements List {
 }
 
 //using 'linkedlist' data-structure
-class LinkedList extends AbstractList implements List {
+class LinkedList1 extends AbstractList implements List {
     @Override
     public void add(Object o) {
 
@@ -125,8 +125,8 @@ class LinkedList extends AbstractList implements List {
 public class Interface_vs_AbstractClass {
     public static void main(String[] args) {
 
-        List list = new ArrayList();
-        list = new LinkedList();
+        List list = new ArrayList1();
+        list = new LinkedList1();
 
     }
 }

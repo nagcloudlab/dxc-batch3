@@ -1,0 +1,54 @@
+
+
+
+
+------------------------
+collections
+------------------------
+
+    1. List
+
+        -> index based
+        -> ordered output
+        -> to hold duplicate data elements
+
+    2. Set
+
+        -> no-index
+        -> unique
+        -> ordered | un-ordered | sorted
+
+    3. Map
+
+        -> key + value
+
+------------------------
+collections classes
+------------------------
+
+    1. List
+
+        Vector ( dynamic-array ) => thread-safe
+            Stack => LIFO
+        ArrayList ( dynamic-array ) => non-thread-safe
+        LinkedList ( doubled-linked-list )
+
+
+    2. Set
+
+        TreeSet ( b-tree ) => sorted
+        HashSet ( hashtable ) => un-ordered
+        LinkedHashSet ( hashtable + dll ) => ordered
+
+    3. Map
+
+        TreeMap ( b-tree ) => sorted
+        HashMap ( hashtable ) => un-ordered
+        LinkedHashMap ( hashtable + dll ) => ordered
+        Hashtable => thread-safe
+
+    4. Queue
+
+
+------------------------------------------------------------------------------------
+
