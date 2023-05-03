@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/1-java/FP/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1-java/FP/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/1-java/design-patterns/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/1-java/design-patterns/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1-java/functional-programming/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1-java/functional-programming/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/1-java/java8-features/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/1-java/java8-features/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/1-java/play-with-java/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/1-java/play-with-java/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/1-java/shop-IT/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/1-java/shop-IT/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1-java/streams-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1-java/streams-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/1-java/transfer-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/1-java/transfer-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/streams-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/streams-api/src/main/resources" charset="UTF-8" />
   </component>
 </project>

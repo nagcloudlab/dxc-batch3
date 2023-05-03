@@ -1,0 +1,29 @@
+
+
+style of programming
+----------------------------------------------------------------
+
+
+
+1.imperative style
+-----------------------
+
+    => solve any problem step-by-step
+    => intention + implementation mixed together
+
+
+2. declarative style
+-----------------------
+
+    - separate intention(s) from implementation
+
+
+     - by local/anonymous inner classes  ( till java 7 )
+     - by functions
+
+
+     declarative programming with function ==> Functional Programming
+
+
+
+
