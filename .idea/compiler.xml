@@ -8,10 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="play-with-java" />
         <module name="functional-programming" />
-        <module name="streams-api" />
         <module name="shop-IT" />
+        <module name="streams-api" />
         <module name="transfer-service" />
         <module name="design-patterns" />
+        <module name="concurrency" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

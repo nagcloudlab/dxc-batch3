@@ -1,0 +1,9 @@
+
+
+process
+    => whole execution within OS
+    => has it's own private memory
+
+thread
+    => independent execution within process
+    => many threads within process share same memory

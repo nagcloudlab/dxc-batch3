@@ -15,11 +15,14 @@
         <option value="$PROJECT_DIR$/1-java/functional-programming/pom.xml" />
         <option value="$PROJECT_DIR$/streams-api/pom.xml" />
         <option value="$PROJECT_DIR$/1-java/streams-api/pom.xml" />
+        <option value="$PROJECT_DIR$/concurrency/pom.xml" />
+        <option value="$PROJECT_DIR$/1-java/concurrency/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/1-java/FP/pom.xml" />
+        <option value="$PROJECT_DIR$/concurrency/pom.xml" />
         <option value="$PROJECT_DIR$/streams-api/pom.xml" />
       </set>
     </option>
