@@ -1,0 +1,138 @@
+
+----------------------------------------------
+1. project
+----------------------------------------------
+
+ project
+    |
+    |------ p1  ( .java / .class )
+    |  |
+    |  |----p11
+    |
+    |-----  p2
+    |
+
+
+----------------------------------------------
+2. Java File
+----------------------------------------------
+
+    PublicType.java
+    -----------------------------------------
+    | package declaration  ( 1 )
+    | import statements    ( many )
+    | public type ( class | interface | enum | annotation | record )  ( 1 ) ( Must )
+    | default types  ( many )
+    |----------------------------------------
+
+
+----------------------------------------------
+3. Interface Type
+----------------------------------------------
+
+    __________ interface Name [extends] Interface1,Interface2,..{
+    [public ]
+    [       ]   // constant state i.e static final
+                // abstract behavior
+                // default behavior
+                // static behavior
+
+            }
+
+
+----------------------------------------------
+4. Class Type
+----------------------------------------------
+
+
+        ________ _________ class Name [extends] BaseType
+        [public] [abstract]           [implements] Interface1,Interface2,.. {
+        [      ] [final   ]     // State variables
+                 [strictfp]     // Constructor(s)
+                                // Behaviors
+                                // Nested Types ( class | Interface | enum ..
+                            }
+
+----------------------------------------------
+5. Variables / Data Type
+----------------------------------------------
+
+    DataType
+        - value / primitives
+        - object / reference ( interface | class | enum | annotation )
+
+   __________  ______________ DataType varName = [ value | obj's reference )
+   [private]   [static   ]
+   [public ]   [final    ]
+   [protected] [transient]
+   [        ]  [volatile  ]
+
+   local-variables
+   ------------------------------------------
+    - Nil-      [final]         [var]
+
+----------------------------------------------
+6. Constructor
+----------------------------------------------
+
+
+    ____________ ClassName([args]) [throws] CheckedException{
+    [public]
+    [private]       // obj initialization logic
+    [protected]
+    [         ]
+
+                }
+
+
+----------------------------------------------
+7. Methods
+----------------------------------------------
+
+ReturnType
+    - void
+    - value
+    - object
+
+
+     ____________  _________ ReturnType methodName([args]) [throws] CheckedException{
+     [public]      [static ]        // A,R,L and assignment operations
+     [private]     [final  ]        // conditional
+     [protected]   [strictfp]       // looping
+     [          ]  [synchronized]   // invocations
+                   [abstract]       [return] [result]
+                   [native ]
+                              }
+
+
+----------------------------------------------
+7. enum
+----------------------------------------------
+
+why we need?
+
+=> to group related constants under Type
+
+    MALE ,FEMALE ==> Gender
+    MON,TUE ==> WeekDays
+
+
+    ________ enum Name{
+                CONSTANTS
+                method(s)
+            }
+
+
+----------------------------------------------
+7. annotation
+----------------------------------------------
+
+why we need?
+
+    => to describe out java programming elements
+       to other java programs ( compiler , runtime, framework, tools , editors )
+
+   _____ @interface Name{
+           properties(s)
+         }
+
