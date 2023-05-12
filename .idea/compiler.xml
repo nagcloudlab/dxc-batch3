@@ -7,12 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="play-with-java" />
+        <module name="money-transfer-service" />
         <module name="functional-programming" />
         <module name="shop-IT" />
         <module name="streams-api" />
-        <module name="transfer-service" />
         <module name="design-patterns" />
         <module name="concurrency" />
+        <module name="transfer-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
