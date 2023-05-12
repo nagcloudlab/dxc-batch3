@@ -2,14 +2,13 @@ package com.example.config;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 
+//@Component
 @Configuration
 @ComponentScan(basePackages = {
         "com.example.service",
@@ -22,6 +21,8 @@ public class MoneyTransferServiceConfiguration {
     private Environment environment;
 
     @Bean
+    @Scope("singleton")
+    @Lazy(value = false)
     public DataSource dataSource() {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName(environment.getProperty("dataSource.driverClassName"));

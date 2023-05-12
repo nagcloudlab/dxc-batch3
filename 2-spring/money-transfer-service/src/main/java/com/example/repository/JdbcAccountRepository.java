@@ -4,14 +4,22 @@ import com.example.model.Account;
 import com.example.service.UPITransferService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Optional;
 
-@Component
+//@Component
+@Repository
+//@Qualifier("primary")
+@AccountRepoQualifier(
+        database = "mysql",
+        tech = "jdbc"
+)
 public class JdbcAccountRepository implements AccountRepository{
 
     private static Logger logger = Logger.getLogger(AccountRepository.class);

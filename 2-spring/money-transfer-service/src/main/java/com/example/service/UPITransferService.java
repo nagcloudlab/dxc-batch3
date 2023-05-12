@@ -1,22 +1,31 @@
 package com.example.service;
 
 import com.example.model.Account;
+import com.example.repository.AccountRepoQualifier;
 import com.example.repository.AccountRepository;
 import com.example.repository.JdbcAccountRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Component("upiTransferService")
+//@Component("upiTransferService")
+@Service("upiTransferService")
+//@Scope("singleton")
+//@Lazy(value = false)
 public class UPITransferService implements TransferService {
 
     private static Logger logger = Logger.getLogger(UPITransferService.class);
     private AccountRepository accountRepository;
 
 //    @Autowired
-    public UPITransferService(AccountRepository accountRepository) {
+    public UPITransferService(
+            /*@Qualifier("primary")*/@AccountRepoQualifier(database = "mysql",tech = "jdbc") AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
         logger.info("UPITransferService created");
     }

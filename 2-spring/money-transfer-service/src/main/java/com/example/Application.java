@@ -34,10 +34,14 @@ public class Application {
         // use
         //--------------------------------------------------------------------------
 
-        TransferService transferService=applicationContext.getBean("upiTransferService", TransferService.class);
+        TransferService transferService1=applicationContext.getBean("upiTransferService", TransferService.class);
+        TransferService transferService2=applicationContext.getBean("upiTransferService", TransferService.class);
+
+
+        System.out.println(transferService1==transferService2);
 
         try {
-            transferService.transfer(10, "1", "2");
+            transferService1.transfer(10, "1", "2");
         }catch (AccountNotFoundException e) {
             System.out.println(e.getMessage());
         }
