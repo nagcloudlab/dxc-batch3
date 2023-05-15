@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 import java.util.Optional;
 
 @Repository
-@AccountRepoQualifier(database = "mysql",tech = "jpa")
 public class JpaAccountRepository implements AccountRepository{
 
     @PersistenceContext

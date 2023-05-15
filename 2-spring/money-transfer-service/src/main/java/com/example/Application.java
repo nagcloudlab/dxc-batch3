@@ -1,41 +1,41 @@
 package com.example;
 
-import com.example.config.DataSourceConfiguration;
-import com.example.config.JdbcConfiguration;
-import com.example.config.JpaConfiguration;
 import com.example.service.AccountNotFoundException;
 import com.example.service.TransferService;
+import org.example.dxc.DxcAutoConfiguration;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
-@Configuration
-@Import({
-        DataSourceConfiguration.class,
-        JdbcConfiguration.class,
-        JpaConfiguration.class
-})
-@ComponentScan
+//@Configuration
+//@EnableAutoConfiguration
+//@ComponentScan
+@SpringBootApplication(
+        scanBasePackages = "com.example"
+)
 @EnableAspectJAutoProxy
 @EnableTransactionManagement
 public class Application {
     public static void main(String[] args) {
+
 
         //--------------------------------------------------------------------------
         // init / boot
         //--------------------------------------------------------------------------
         System.out.println("-".repeat(100));
 
-        // spring component management
-        ConfigurableApplicationContext applicationContext=
-               // new ClassPathXmlApplicationContext("money-transfer-service.xml");
-                new AnnotationConfigApplicationContext(Application.class);
+        ConfigurableApplicationContext applicationContext =
+                SpringApplication.run(Application.class, args);
 
         System.out.println("-".repeat(100));
         //--------------------------------------------------------------------------
         // use
         //--------------------------------------------------------------------------
+
         TransferService transferService1=applicationContext.getBean("upiTransferService", TransferService.class);
         System.out.println(transferService1.getClass());
         try {
