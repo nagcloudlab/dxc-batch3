@@ -1,32 +1,33 @@
 package com.example;
 
-import com.example.config.MoneyTransferServiceConfiguration;
-import com.example.repository.AccountRepository;
-import com.example.repository.JdbcAccountRepository;
+import com.example.config.DataSourceConfiguration;
+import com.example.config.JdbcConfiguration;
 import com.example.service.AccountNotFoundException;
 import com.example.service.TransferService;
-import com.example.service.UPITransferService;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.*;
 
+
+
+@Configuration
+@Import({
+        DataSourceConfiguration.class,
+        JdbcConfiguration.class
+})
+@ComponentScan
+@EnableAspectJAutoProxy
 public class Application {
     public static void main(String[] args) {
-
 
         //--------------------------------------------------------------------------
         // init / boot
         //--------------------------------------------------------------------------
         System.out.println("-".repeat(100));
 
-        //AccountRepository accountRepository=new JdbcAccountRepository(); // dependency
-        //TransferService transferService = new UPITransferService(accountRepository); // dependent
-
         // spring component management
         ConfigurableApplicationContext applicationContext=
                // new ClassPathXmlApplicationContext("money-transfer-service.xml");
-                new AnnotationConfigApplicationContext(MoneyTransferServiceConfiguration.class);
-
+                new AnnotationConfigApplicationContext(Application.class);
 
         System.out.println("-".repeat(100));
         //--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ public class Application {
         TransferService transferService1=applicationContext.getBean("upiTransferService", TransferService.class);
         System.out.println(transferService1.getClass());
         try {
-            transferService1.transfer(100, "13", "14");
+            transferService1.transfer(1000.00, "2", "1");
         }catch (AccountNotFoundException e) {
             System.out.println(e.getMessage());
         }

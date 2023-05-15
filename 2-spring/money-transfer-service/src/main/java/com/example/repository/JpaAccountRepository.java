@@ -21,7 +21,7 @@ public class JpaAccountRepository implements AccountRepository{
     }
 
     @Override
-    public Account updateAccount(Account account) {
-        return null;
+    public int updateAccount(Account account) {
+        return 0;
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -33,6 +34,7 @@ public class UPITransferService implements TransferService {
     }
 
     @Override
+    @Transactional
     @Count
     public boolean transfer(double amount, String source, String destination) {
         //System.out.println("Transferring " + amount + " from " + source + " to "); // current thread
@@ -41,6 +43,9 @@ public class UPITransferService implements TransferService {
                 .orElseThrow(() -> new AccountNotFoundException(source));
         Account destinationAccount = accountRepository.loadAccount(destination)
                 .orElseThrow(()->new AccountNotFoundException(destination));
+
+        logger.info(sourceAccount);
+        logger.info(destinationAccount);
 
         sourceAccount.setBalance(sourceAccount.getBalance() - amount);
         destinationAccount.setBalance(destinationAccount.getBalance() + amount);
