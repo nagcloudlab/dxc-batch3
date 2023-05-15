@@ -1,4 +1,4 @@
-package com.example.model.com.example;
+package com.example.entity.com.example;
 
 public class Employee {
 

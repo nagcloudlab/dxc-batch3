@@ -1,10 +1,5 @@
-package com.example.model;
+package com.example.entity;
 
-import com.example.model.com.example.Employee;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 public class Play_With_Streams {

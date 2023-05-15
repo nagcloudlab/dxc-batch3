@@ -17,7 +17,7 @@ public class JdbcConfiguration {
     }
 
 
-    @Bean
+    @Bean("jdbcTransactionManager")
     public PlatformTransactionManager transactionManager(DataSource dataSource){
         return new DataSourceTransactionManager(dataSource);
     }

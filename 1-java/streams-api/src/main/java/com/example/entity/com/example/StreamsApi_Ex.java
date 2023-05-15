@@ -1,6 +1,6 @@
-package com.example.model.com.example;
+package com.example.entity.com.example;
 
-import com.example.model.Dish;
+import com.example.entity.Dish;
 
 import java.util.ArrayList;
 import java.util.Comparator;

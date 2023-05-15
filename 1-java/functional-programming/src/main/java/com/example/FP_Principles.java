@@ -8,7 +8,7 @@ Java | Javascript | Python | Scala | Kotlin | GO
         - The return value of a function can be a function
  */
 
-import com.example.model.Apple;
+import com.example.entity.Apple;
 
 import java.io.FileWriter;
 import java.io.IOException;

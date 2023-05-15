@@ -1,27 +1,30 @@
 package com.example.repository;
 
-import com.example.model.Account;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import com.example.entity.Account;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.Optional;
 
-//@Component
 @Repository
-//@Qualifier("secondary")
-@AccountRepoQualifier(
-        database = "mysql",
-        tech = "jpa"
-)
+@AccountRepoQualifier(database = "mysql",tech = "jpa")
 public class JpaAccountRepository implements AccountRepository{
+
+    @PersistenceContext
+    EntityManager entityManager;
+
     @Override
     public Optional<Account> loadAccount(String number) {
-        return Optional.empty();
+        Account account= entityManager.find(Account.class, number);
+        return Optional.ofNullable(account);
     }
 
     @Override
     public int updateAccount(Account account) {
-        return 0;
+        account=entityManager.merge(account);
+        if(account!=null)
+            return 1;
+        else return 0;
     }
 }

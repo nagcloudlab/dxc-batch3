@@ -1,12 +1,9 @@
-package com.example.model.com.example;
+package com.example.entity.com.example;
 
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Ex {
 

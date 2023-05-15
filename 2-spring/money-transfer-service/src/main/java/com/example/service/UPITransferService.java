@@ -1,20 +1,12 @@
 package com.example.service;
 
 import com.example.annotation.Count;
-import com.example.model.Account;
+import com.example.entity.Account;
 import com.example.repository.AccountRepoQualifier;
 import com.example.repository.AccountRepository;
-import com.example.repository.JdbcAccountRepository;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 //@Component("upiTransferService")
 @Service("upiTransferService")
@@ -28,13 +20,15 @@ public class UPITransferService implements TransferService {
 
 //    @Autowired
     public UPITransferService(
-            /*@Qualifier("primary")*/@AccountRepoQualifier(database = "mysql",tech = "jdbc") AccountRepository accountRepository) {
+            /*@Qualifier("primary")*/@AccountRepoQualifier(database = "mysql",tech = "jpa") AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
         logger.info("UPITransferService created");
     }
 
     @Override
-    @Transactional
+    @Transactional(
+            transactionManager = "jpaTransactionManager"
+    )
     @Count
     public boolean transfer(double amount, String source, String destination) {
         //System.out.println("Transferring " + amount + " from " + source + " to "); // current thread

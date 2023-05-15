@@ -2,20 +2,23 @@ package com.example;
 
 import com.example.config.DataSourceConfiguration;
 import com.example.config.JdbcConfiguration;
+import com.example.config.JpaConfiguration;
 import com.example.service.AccountNotFoundException;
 import com.example.service.TransferService;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.*;
-
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 @Configuration
 @Import({
         DataSourceConfiguration.class,
-        JdbcConfiguration.class
+        JdbcConfiguration.class,
+        JpaConfiguration.class
 })
 @ComponentScan
 @EnableAspectJAutoProxy
+@EnableTransactionManagement
 public class Application {
     public static void main(String[] args) {
 
