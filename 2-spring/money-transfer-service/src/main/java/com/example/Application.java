@@ -19,7 +19,6 @@ public class Application {
         //--------------------------------------------------------------------------
         System.out.println("-".repeat(100));
 
-        // manual component management
         //AccountRepository accountRepository=new JdbcAccountRepository(); // dependency
         //TransferService transferService = new UPITransferService(accountRepository); // dependent
 
@@ -33,15 +32,10 @@ public class Application {
         //--------------------------------------------------------------------------
         // use
         //--------------------------------------------------------------------------
-
         TransferService transferService1=applicationContext.getBean("upiTransferService", TransferService.class);
-        TransferService transferService2=applicationContext.getBean("upiTransferService", TransferService.class);
-
-
-        System.out.println(transferService1==transferService2);
-
+        System.out.println(transferService1.getClass());
         try {
-            transferService1.transfer(10, "1", "2");
+            transferService1.transfer(100, "13", "14");
         }catch (AccountNotFoundException e) {
             System.out.println(e.getMessage());
         }

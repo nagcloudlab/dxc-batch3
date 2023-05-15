@@ -9,8 +9,10 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 
 //@Component
+@EnableAspectJAutoProxy
 @Configuration
 @ComponentScan(basePackages = {
+        "com.example.aspect",
         "com.example.service",
         "com.example.repository"
 })

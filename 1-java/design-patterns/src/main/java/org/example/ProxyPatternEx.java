@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 
 class DxcTraining {
     public void getJavaTraining() {
+        // Log
+        // sec
         System.out.println("Dxc Java Training");
     }
 
@@ -18,7 +20,7 @@ class Log{
     }
 }
 
-class Auth{
+class Sec{
     public void authorize() {
         System.out.println("Authorized:");
     }
@@ -27,7 +29,7 @@ class Auth{
 class DxcTrainingProxy extends DxcTraining{
 
     Log log = new Log();
-    Auth auth = new Auth();
+    Sec auth = new Sec();
     DxcTraining dxcTraining=new DxcTrainingProxy();
 
     @Override

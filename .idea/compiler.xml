@@ -19,6 +19,7 @@
     <bytecodeTargetLevel>
       <module name="FP" target="17" />
       <module name="java8-features" target="17" />
+      <module name="untitled" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

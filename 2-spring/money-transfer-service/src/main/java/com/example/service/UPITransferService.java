@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.annotation.Count;
 import com.example.model.Account;
 import com.example.repository.AccountRepoQualifier;
 import com.example.repository.AccountRepository;
@@ -23,6 +24,7 @@ public class UPITransferService implements TransferService {
     private static Logger logger = Logger.getLogger(UPITransferService.class);
     private AccountRepository accountRepository;
 
+
 //    @Autowired
     public UPITransferService(
             /*@Qualifier("primary")*/@AccountRepoQualifier(database = "mysql",tech = "jdbc") AccountRepository accountRepository) {
@@ -31,6 +33,7 @@ public class UPITransferService implements TransferService {
     }
 
     @Override
+    @Count
     public boolean transfer(double amount, String source, String destination) {
         //System.out.println("Transferring " + amount + " from " + source + " to "); // current thread
         logger.info("Transferring " + amount + " from " + source + " to "); // different thread
