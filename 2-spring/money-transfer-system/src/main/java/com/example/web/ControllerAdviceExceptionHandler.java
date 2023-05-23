@@ -8,7 +8,7 @@ import com.example.service.AccountNotFoundException;
 import com.example.service.InsufficientFundsException;
 
 @ControllerAdvice
-public class GlobalExceptionHandlerController {
+public class ControllerAdviceExceptionHandler {
 
     @ExceptionHandler({
             AccountNotFoundException.class,

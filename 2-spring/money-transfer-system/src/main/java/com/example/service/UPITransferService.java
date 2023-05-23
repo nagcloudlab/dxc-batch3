@@ -14,7 +14,7 @@ public class UPITransferService implements TransferService {
 
     private final AccountRepository accountRepository;
 
-    @Transactional
+    @Transactional(transactionManager = "transactionManager")
     @Override
     public void transfer(String fromAccountNumber, String toAccountNumber, Double amount) {
 

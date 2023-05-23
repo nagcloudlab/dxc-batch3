@@ -1,5 +1,5 @@
 
-debug: true
+debug: false
 
 spring:
   datasource:
@@ -9,8 +9,11 @@ spring:
     password: root1234
   jpa:
     show-sql: true  
+    hibernate:
+      ddl-auto: create-drop  
 
   mvc:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp  
+
