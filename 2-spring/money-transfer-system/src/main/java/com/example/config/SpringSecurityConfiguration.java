@@ -16,7 +16,7 @@ public class SpringSecurityConfiguration {
         @Bean
         public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
                 http
-                                .csrf().disable()
+                                .csrf(c -> c.disable())
                                 .authorizeHttpRequests((requests) -> requests
                                                 .antMatchers("/", "/home").permitAll()
                                                 .anyRequest().hasRole("ADMIN"))
