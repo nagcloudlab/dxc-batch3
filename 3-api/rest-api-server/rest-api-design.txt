@@ -1,0 +1,50 @@
+
+
+
+ 1.  Resource identification in requests
+
+     /api/v1/todos
+     /api/v1/todos/{todoId}
+     /api/v1/todos?type
+     /api/v1/todos?status
+
+ 2. Resource manipulation through representations (JSON)
+
+REST api end-points
+
+     GET /api/v1/todos
+     GET /api/v1/todos/{todoId}
+     POST /api/v1/todos
+     PUT /api/v1/todos/{todoId}
+     DELETE /api/v1/todos/{todoId}
+
+ 3. Self-descriptive messages
+
+     Content-Type: application/json
+     Accept: application/json
+
+ 4. Hypermedia as the engine of application state (HATEOAS)
+
+         {
+        "id": 1,
+        "title": "Buy milk",
+        "status": "pending",
+        "links": [
+            {
+            "rel": "self",
+            "href": "/api/v1/todos/1"
+            },
+            {
+            "rel": "update",
+            "href": "/api/v1/todos/1",
+            "method": "PUT"
+            },
+            {
+            "rel": "delete",
+            "href": "/api/v1/todos/1",
+            "method": "DELETE"
+            }
+        ]
+        }
+
+ --------------------------------------------------------------------
