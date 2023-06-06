@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.security;
 
 import java.util.Collection;
 import java.util.List;
