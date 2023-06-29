@@ -1,0 +1,22 @@
+
+
+
+angular core concepts
+--------------------------
+
+1. data binding
+
+    a. interpolation
+
+        syntax: {{expression}}
+
+
+
+
+2. directives
+
+    => re-usable UI functionalities
+
+    1. structural
+    2. attribute
+
