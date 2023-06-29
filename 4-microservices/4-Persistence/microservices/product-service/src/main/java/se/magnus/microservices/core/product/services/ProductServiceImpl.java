@@ -52,6 +52,7 @@ public class ProductServiceImpl implements ProductService {
       throw new InvalidInputException("Invalid productId: " + productId);
     }
 
+    // thread-1: blocked..
     ProductEntity entity = repository.findByProductId(productId)
       .orElseThrow(() -> new NotFoundException("No product found for productId: " + productId));
 

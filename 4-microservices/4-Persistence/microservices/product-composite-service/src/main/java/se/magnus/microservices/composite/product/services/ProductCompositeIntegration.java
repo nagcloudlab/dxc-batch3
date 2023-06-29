@@ -79,6 +79,7 @@ public class ProductCompositeIntegration implements ProductService, Recommendati
       String url = productServiceUrl + "/" + productId;
       LOG.debug("Will call the getProduct API on URL: {}", url);
 
+      // thread-1
       Product product = restTemplate.getForObject(url, Product.class);
       LOG.debug("Found a product with id: {}", product.getProductId());
 
