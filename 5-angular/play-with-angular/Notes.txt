@@ -7,9 +7,15 @@ angular core concepts
 1. data binding
 
     a. interpolation
-
         syntax: {{expression}}
 
+    b. property/attribute binding
+        syntax:
+        <element [prop1]="expression"/>
+
+    c. event binding
+        syntax:
+        <element (event-name)="eventHandler($event)"/>
 
 
 
@@ -17,6 +23,7 @@ angular core concepts
 
     => re-usable UI functionalities
 
-    1. structural
-    2. attribute
+    1. component  => <app-root>
+    2. structural => ngIf,ngFor
+    3. property/attribute  => ngClass
 

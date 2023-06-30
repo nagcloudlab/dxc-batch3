@@ -1,0 +1,22 @@
+
+
+<div class="card" *ngIf="votingLines.length!==0">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Likes</th>
+        <th>Dislikes</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let votingLine of votingLines">
+          <td>{{ votingLine.item }}</td>
+          <td>{{ votingLine.likes }}</td>
+          <td>{{ votingLine.dislikes }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

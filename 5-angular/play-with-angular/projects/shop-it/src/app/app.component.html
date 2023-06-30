@@ -1,13 +1,7 @@
 <div class="container">
-    <div class="display-1">shop-it</div>
-    <hr />
 
+  <app-header [title]="title"></app-header>
+  <app-product-list></app-product-list>
 
-    <div *ngIf="product.quantity!==0">
-      <div>{{product.name}}</div>
-      <div>{{product.price}}</div>
-      <div>{{product.description}}</div>
-      <button class="btn btn-primary">buy</button>
-    </div>
 
 </div>
