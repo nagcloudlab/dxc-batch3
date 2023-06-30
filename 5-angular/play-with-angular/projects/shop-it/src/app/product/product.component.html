@@ -1,12 +1,13 @@
-<div class="row">
+<div class="row" appHighlight>
   <div class="col-4">
     <img [src]="product.imagePath" class="img-fluid">
   </div>
   <div class="col-8">
     <div>
-      <div>{{product.name}}</div>
-      <div>{{product.price}}</div>
-      <button [disabled]="!product.isAvailable" class="btn btn-primary">Buy</button>
+<!--      {{product|json}}-->
+      <div>{{product.name|uppercase}} - {{product.makeDate|date:'yyyy'}}</div>
+      <div>{{product.price|discount|currency:product.currencyCode:'code'}}</div>
+      <button [disabled]="!product.isAvailable" (click)="handleBuy()" class="btn btn-primary">Buy</button>
       <br/>
       <ul class="nav nav-tabs">
         <li class="nav-item">

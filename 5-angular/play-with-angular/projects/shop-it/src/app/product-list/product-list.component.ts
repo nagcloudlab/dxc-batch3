@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -8,24 +8,34 @@ import { Component } from '@angular/core';
 export class ProductListComponent {
 
 
-  products=[
+  products = [
     {
       id: 1,
       name: 'Laptop',
-      price: 100,
+      price: 100000,
+      currencyCode:'INR',
+      makeDate:Date.now(),
       description: 'Laptop description',
-      isAvailable: false,
+      isAvailable: true,
       imagePath: "assets/images/Laptop.png"
     },
     {
       id: 2,
       name: 'Mobile',
       price: 200,
+      currencyCode:'INR',
+      makeDate:Date.now(),
       description: 'Mobile description',
       isAvailable: true,
-      imagePath:"assets/images/Mobile.png"
+      imagePath: "assets/images/Mobile.png"
     }
   ]
+
+  @Output() buy = new EventEmitter<any>();
+
+  handleBuy(event: any) {
+    this.buy.emit(event);
+  }
 
 
 }
