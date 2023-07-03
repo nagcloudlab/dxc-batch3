@@ -13,6 +13,30 @@ import { DxcCardComponent } from './components/dxc-card/dxc-card.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { DiscountPipe } from './pipes/discount.pipe';
 import {HttpClientModule} from "@angular/common/http";
+import { ReviewFormComponent } from './components/review-form/review-form.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RouterModule, Routes} from "@angular/router";
+import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
+const routes:Routes=[
+  {
+    path: '',
+    component:HomeComponent
+  },
+  {
+    path: 'products',
+    component:ProductListComponent
+  },
+  {
+    path: 'cart',
+    component:CartViewComponent
+  },
+  {
+    path:'**',
+    component:NotFoundComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -25,11 +49,17 @@ import {HttpClientModule} from "@angular/common/http";
     CartViewComponent,
     DxcCardComponent,
     HighlightDirective,
-    DiscountPipe
+    DiscountPipe,
+    ReviewFormComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

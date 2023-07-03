@@ -1,0 +1,132 @@
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header"> Customer Form</div>
+      <div class="card-body">
+        <form [formGroup]="customerForm" (submit)="handleSubmit($event)">
+          <div class="form-group">
+            <label>FirstName</label>
+            <input type="text"
+                   autofocus
+                   class="form-control"
+                   formControlName="firstName"
+                   name="firstName"
+            />
+            <div class="text-danger"
+                 *ngIf="customerForm.controls['firstName'].invalid && customerForm.controls['firstName'].touched">
+                <span *ngIf="customerForm.controls['firstName'].errors.required">
+                  First Name is required.
+                </span>
+              <span *ngIf="customerForm.controls['firstName'].errors.minlength">
+                  First Name must be at least 3 characters.
+                </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>LastName</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="lastName"
+            />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="email"
+            />
+          </div>
+          <div class="form-group">
+            <label>Mobile</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="mobile"
+            />
+          </div>
+          <div class="form-group">
+            <label>Notification:</label>
+            <input type="radio"
+                   value="email"
+                   formControlName="noti"
+                   (click)="handleNotiChange('email')"
+            /> Email
+            &nbsp;
+            <input type="radio"
+                   value="sms"
+                   formControlName="noti"
+                   (click)="handleNotiChange('sms')"
+            />SMS
+          </div>
+          <br/>
+
+          <div formArrayName="addressFormArray">
+            <div class="card" *ngFor="let group of addressFormArray.controls;let i=index" [formGroup]="group">
+              <div class="card-header">Address - {{i}} <button (click)="handleRemoveAddress(i)"
+                                                               class="btn btn-sm btn-danger">-</button>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label class="form-control-label" >Street</label>
+                  <input formControlName="street" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label" >City</label>
+                  <input formControlName="city" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label" >State</label>
+                  <input formControlName="state" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label" >Zip</label>
+                  <input formControlName="zip" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label">Country</label>
+                  <input formControlName="country" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr/>
+          <button type="button" class="btn btn-danger" (click)="handleNewAddress()">Add New Address</button>
+
+          <hr/>
+          <button type="button" class="btn btn-primary" (click)="loadCustomer()">Load</button>
+          &nbsp;
+          <button type="submit" class="btn btn-dark">Submit</button>
+          <hr/>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <hr/>
+    FormGroup
+    <hr/>
+    <pre>
+      is pristine  : {{customerForm.pristine}}
+      is dirty     : {{customerForm.dirty}}
+      is untouched : {{customerForm.untouched}}
+      is touched   : {{customerForm.touched}}
+      is valid     : {{customerForm.valid}}
+      is invalid   : {{customerForm.invalid}}
+    </pre>
+    <hr/>
+    FormControl ( e.g lastName )
+    <hr/>
+    <pre>
+      is pristine  : {{customerForm.controls['lastName'].pristine}}
+      is dirty     : {{customerForm.controls['lastName'].dirty}}
+      is untouched : {{customerForm.controls['lastName'].untouched}}
+      is touched   : {{customerForm.controls['lastName'].touched}}
+      is valid     : {{customerForm.controls['lastName'].valid}}
+      is invalid   : {{customerForm.controls['lastName'].invalid}}
+    </pre>
+    <hr/>
+    <pre>
+      {{customerForm.value|json}}
+    </pre>
+  </div>
+</div>

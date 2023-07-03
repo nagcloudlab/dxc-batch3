@@ -3,16 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ReactiveCustomerFormComponent } from './reactive-customer-form/reactive-customer-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerFormComponent
+    CustomerFormComponent,
+    ReactiveCustomerFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

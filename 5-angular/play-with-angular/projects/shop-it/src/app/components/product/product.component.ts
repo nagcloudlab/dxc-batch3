@@ -28,15 +28,30 @@ export class ProductComponent {
   }
 
   handleTabChange(event: MouseEvent, tabIndex: number) {
+    event.preventDefault();
     this.currentTab = tabIndex
     if(this.currentTab === 3){
-      this.reviews=this.reviewsService.getReviews(this.product.id)
+      this.reviewsService.getReviews(this.product.id)
+        .subscribe({
+          next: (reviews) => {
+            this.reviews = reviews;
+          }
+        })
     }
   }
 
   handleBuy() {
     //this.buy.emit(this.product)
     this.cartService.addToCart(this.product)
+  }
+
+  handleNewReview(review: Review) {
+    this.reviewsService.postNewReview(this.product.id, review)
+      .subscribe({
+        next: (review:Review) => {
+          this.reviews.push(review)
+        }
+      });
   }
 
 }

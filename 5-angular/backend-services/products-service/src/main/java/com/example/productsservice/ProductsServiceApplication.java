@@ -25,6 +25,16 @@ class Product{
     private LocalDateTime makeDate;
 }
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class Review{
+    private int id;
+    private String author;
+    private int stars;
+    private String body;
+}
+
 @RestController
 @CrossOrigin(origins = {
         "http://localhost:4200",
@@ -37,6 +47,37 @@ class ProductSController{
         products.add(new Product(2, "Mobile", 200.0, "INR", "Product 2 description", true, "assets/images/Mobile.png", LocalDateTime.now()));
         return ResponseEntity.ok(products);
     }
+}
+
+@RestController
+@CrossOrigin(origins = {
+        "http://localhost:4200",
+})
+class ReviewsController{
+
+    static Map<Integer, List<Review>> reviews = new HashMap<>();
+    static {
+        List<Review> reviews1 = new ArrayList<>();
+        reviews1.add(new Review(1, "John Doe", 5, "Product 1 description"));
+        reviews1.add(new Review(2, "Jane Doe", 4, "Product 2 description"));
+        reviews.put(1,reviews1);
+        List<Review> reviews2 = new ArrayList<>();
+        reviews2.add(new Review(3, "John Doe", 5, "Product 1 description"));
+        reviews2.add(new Review(4, "Jane Doe", 4, "Product 2 description"));
+        reviews.put(2,reviews2);
+    }
+
+    @GetMapping("/api/v1/{productId}/reviews")
+    public ResponseEntity<?> getReviews(@PathVariable int productId){
+        return ResponseEntity.ok(reviews.get(productId));
+    }
+    @PostMapping("/api/v1/{productId}/reviews")
+    public ResponseEntity<?> addReview(@PathVariable int productId,@RequestBody Review review){
+        // add id
+        reviews.get(productId).add(review);
+        return ResponseEntity.ok(review);
+    }
+
 }
 
 @SpringBootApplication

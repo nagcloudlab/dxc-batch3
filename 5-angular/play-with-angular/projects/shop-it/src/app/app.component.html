@@ -4,16 +4,24 @@
   <app-cart-badge></app-cart-badge>
   <hr/>
 
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive=""  routerLink="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active"  routerLink="/products">Products</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active"  routerLink="/cart">Cart</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active"  routerLink="/sign-in">Sign-in</a>
+    </li>
+  </ul>
 
-  <app-cart-view></app-cart-view>
-  <app-dxc-card>
-    <div class="head">Product List</div>
-    <div class="body">
-      <app-product-list #plist></app-product-list>
-    </div>
-  </app-dxc-card>
+  <hr/>
 
-
+ <router-outlet></router-outlet>
 
 
 </div>
