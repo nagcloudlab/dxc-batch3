@@ -1,23 +1,18 @@
 <div class="container">
 
   <app-header [title]="title"></app-header>
-  <app-cart-badge [value]="cart.length"></app-cart-badge>
-  <hr/>
-  <button class="btn btn-primary" (click)="toggleCartView()">
-    {{isCartOpen?'Products':'Cart'}}
-  </button>
+  <app-cart-badge></app-cart-badge>
   <hr/>
 
 
-
-  <app-dxc-card *ngIf="!isCartOpen">
+  <app-cart-view></app-cart-view>
+  <app-dxc-card>
     <div class="head">Product List</div>
     <div class="body">
-      <app-product-list #plist (buy)="handleBuy($event)" ></app-product-list>
+      <app-product-list #plist></app-product-list>
     </div>
   </app-dxc-card>
 
-  <app-cart-view [value]="cart" *ngIf="isCartOpen"></app-cart-view>
 
 
 

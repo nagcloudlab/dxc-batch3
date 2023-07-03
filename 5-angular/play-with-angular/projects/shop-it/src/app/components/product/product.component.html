@@ -7,7 +7,7 @@
 <!--      {{product|json}}-->
       <div>{{product.name|uppercase}} - {{product.makeDate|date:'yyyy'}}</div>
       <div>{{product.price|discount|currency:product.currencyCode:'code'}}</div>
-      <button [disabled]="!product.isAvailable" (click)="handleBuy()" class="btn btn-primary">Buy</button>
+      <button [disabled]="!product.is_available" (click)="handleBuy()" class="btn btn-primary">Buy</button>
       <br/>
       <ul class="nav nav-tabs">
         <li class="nav-item">

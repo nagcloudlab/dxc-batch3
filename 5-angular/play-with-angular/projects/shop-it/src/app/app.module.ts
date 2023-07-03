@@ -3,15 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {CommonModule} from "@angular/common";
-import { HeaderComponent } from './header/header.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductComponent } from './product/product.component';
-import { ReviewComponent } from './review/review.component';
-import { CartBadgeComponent } from './cart-badge/cart-badge.component';
-import { CartViewComponent } from './cart-view/cart-view.component';
-import { DxcCardComponent } from './dxc-card/dxc-card.component';
-import { HighlightDirective } from './highlight.directive';
-import { DiscountPipe } from './discount.pipe';
+import { HeaderComponent } from './components/header/header.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductComponent } from './components/product/product.component';
+import { ReviewComponent } from './components/review/review.component';
+import { CartBadgeComponent } from './components/cart-badge/cart-badge.component';
+import { CartViewComponent } from './components/cart-view/cart-view.component';
+import { DxcCardComponent } from './components/dxc-card/dxc-card.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { DiscountPipe } from './pipes/discount.pipe';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DiscountPipe } from './discount.pipe';
     DiscountPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
