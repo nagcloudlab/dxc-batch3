@@ -35,9 +35,19 @@ public class TodosServiceApplication {
 
 //            userRepository.findAll().forEach(System.out::println);
 
+//
+//            todoRepository.findByStatus(false)
+//                    .forEach(System.out::println);
 
-            todoRepository.findByStatus(false)
-                    .forEach(System.out::println);
+
+            for (int i = 5001; i < 10000; i++) {
+                Todo todo = new Todo();
+                todo.setTitle("Todo " + i);
+                todo.setCompleted(false);
+                todoRepository.save(todo);
+            }
+
+            System.out.println("done");
 
         };
     }
