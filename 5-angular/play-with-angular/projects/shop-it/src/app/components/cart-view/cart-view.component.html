@@ -1,0 +1,17 @@
+<div class="card" appHighlight>
+  <div class="card-header">Item(s) in cart</div>
+  <div class="card-body" #cbody>
+    <table class="table">
+      <tbody>
+      <tr *ngFor="let cartLine of cart">
+        <td>{{cartLine.name}}</td>
+        <td>{{cartLine.price|discount|currency:'INR'}}</td>
+        <td>{{1}}</td>
+        <td>{{cartLine.price|discount|currency:'INR'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+<!--  <div class="card-footer">{{time}}</div>?-->
+</div>
+
